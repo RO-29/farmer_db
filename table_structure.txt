@@ -1,0 +1,100 @@
+create table bank_branch
+(br_id int,
+primary key (br_id),
+br_address varchar(30),
+bank_name varchar(20)
+);
+ 
+
+
+create table account
+(acc_no int primary key,
+balance int,
+br_id int,
+foreign key (br_id) references bank_branch(br_id)
+);
+ 
+
+
+create table loan
+(l_no int,
+l_type varchar(20),
+interest_rate int,
+l_amount int,
+l_period int,
+br_id int,
+primary key(l_no),
+foreign key(br_id) references bank_branch(br_id)
+);
+
+
+
+create table farmer
+(f_id int primary key,
+f_name varchar(40),
+age int,
+address varchar(40),
+education varchar(40),
+family_size int,
+acc_no int,
+l_no int,
+foreign key(acc_no) references account(acc_no),
+foreign key(l_no) references loan(l_no)
+);
+
+
+
+create table land
+(f_id int,
+location varchar(40),
+area int,
+soil_type varchar(40),
+l_fertility varchar(40),
+land_rate int,
+own_or_rented varchar(40),
+period_possessed int,
+primary key(f_id,location),
+foreign key(f_id) references farmer(f_id)
+);
+
+
+
+create table resources
+(r_id int,
+f_id int,
+primary key(r_id,f_id),
+r_name varchar(40),
+qty int,
+unit_price int,
+cost int,
+foreign key(f_id) references farmer(f_id)
+);
+
+
+
+create table financial_status
+(f_id int,
+year int,
+primary key(f_id,year),
+revenue int,
+profit_loss int,
+resource_investment int,
+acc_no int,
+l_no int,
+foreign key(f_id) references farmer(f_id),
+foreign key(l_no) references loan(l_no),
+foreign key(acc_no) references account(acc_no)
+);
+
+
+
+create table output
+(f_id int,
+season varchar(40),
+year int,
+primary key(f_id,season,year),
+crop_name varchar(40),
+total_produce int,
+sale_rate int,
+foreign key(f_id) references farmer(f_id)
+);

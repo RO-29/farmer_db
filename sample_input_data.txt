@@ -1,0 +1,162 @@
+insert into bank_branch values(101,'FC road,Pune','AXIS');
+insert into bank_branch values(102,'MG road,Mumbai','HDFC');
+insert into bank_branch values(103,'Pritampura,Delhi','ICICI');
+insert into bank_branch values(104,'Sector-17,Chandigarh','SBI');
+insert into bank_branch values(105,'Paharganj,Haryana','SBBJ');
+
+
+
+
+insert into account values(101001,5000,101);
+insert into account values(101002,10000,101);
+insert into account values(101003,1000,101);
+insert into account values(101004,20000,101);
+insert into account values(101005,50000,101);
+insert into account values(101006,100000,102);
+insert into account values(101007,7000,102);
+insert into account values(101008,20000,102);
+insert into account values(101009,25000,102);
+insert into account values(101010,8000,102);
+insert into account values(101011,60000,103);
+insert into account values(101012,12000,103);
+insert into account values(101013,90000,103);
+insert into account values(101014,30000,103);
+insert into account values(101015,45000,103);
+insert into account values(101016,9000,104);
+insert into account values(101017,6000,104);
+insert into account values(101018,14000,104);
+insert into account values(101019,75000,104);
+insert into account values(101020,35000,104);
+insert into account values(101021,25000,105);
+insert into account values(101022,30000,105);
+insert into account values(101023,15000,105);
+insert into account values(101024,5000,105);
+insert into account values(101025,95000,105);
+
+
+
+
+insert into loan values(10001,'a',6,50000,4,101);
+insert into loan values(10002,'a',7,75000,4,101);
+insert into loan values(10003,'a',9,400000,6,101);
+insert into loan values(10004,'a',10,500000,7,102);
+insert into loan values(10005,'b',14,100000,5,103);
+insert into loan values(10006,'b',12,200000,5,104);
+insert into loan values(10007,'b',8,400000,5,105);
+insert into loan values(10008,'b',6,200000,4,102);
+insert into loan values(10009,'c',11,100000,2,101);
+insert into loan values(10010,'c',13,250000,4,101);
+insert into loan values(10011,'c',15,450000,5,104);
+insert into loan values(10012,'c',7,500000,7,103);
+insert into loan values(10013,'d',9,75000,2,103);
+insert into loan values(10014,'d',10,150000,3,103);
+insert into loan values(10015,'d',14,275000,4,102);
+insert into loan values(10016,'d',6,200000,5,102);
+insert into loan values(10017,'e',8,350000,6,102);
+insert into loan values(10018,'e',9,400000,4,105);
+insert into loan values(10019,'e',6,300000,3,105);
+insert into loan values(10020,'e',10,250000,5,102);
+
+
+
+
+insert into farmer values(1,'suresh',40,'ganganagar','secondary',4,101001,10001);
+insert into farmer values(2,'ramesh',41,'lalsot','high school',10,101002,10002);
+insert into farmer values(3,'mahesh',45,'ramanagar','primay',9,101003,10003);
+insert into farmer values(4,'mahesh',45,'jamnagar','graduate','10',101004,10004);
+insert into farmer values(5,'shubhamesh',44,'dobra','high school',7,101005,10005);
+insert into farmer values(6,'chinmayesh',47,'lubra','graduate',12,101006,10006);
+insert into farmer values(7,'rohitesh',55,'tumbura','secondary',6,101007,10007);
+insert into farmer values(8,'kueshesh',60,'jamura','inter',5,101008,10008);
+insert into farmer values(9,'nitiesh',65,'madeira','graduate',13,101009,10009);
+insert into farmer values(10,'babulal',68,'jamira','secondary',11,101010,10010);
+insert into farmer values(11,'ramulal',52,'jamnagar','high school',12,101011,10011);
+insert into farmer values(12,'haresh',48,'lalsot','inter',13,101012,10012);
+insert into farmer values(13,'foolesh',56,'ganganagar','high school',9,101013,10013);
+insert into farmer values(14,'yogesh',62,'madhopur','graduate',7,101014,10014);
+insert into farmer values(15,'lovesh',47,'rudharpur','primary',14,101015,10015); 
+insert into farmer values(16,'tukesh',49,'manpuri','high school',15,101016,10016);
+insert into farmer values(17,'ashesh',53,'dobra','graduate',11,101017,10017);
+insert into farmer values(18,'mridesh',67,'robra','primary',12,101018,10018);
+insert into farmer values(19,'rishesh',63,'mobra','secondary',14,101019,10019);
+insert into farmer values(20,'namesh',59,'tobra','high school',10,101020,10020);
+
+
+
+
+insert into land values(1,'x',1000,'red','poor',100,'own',5);
+insert into land values(2,'x',2000,'black','average',120,'rented',6);
+insert into land values(3,'y',1500,'brown','fertile',115,'own',10);
+insert into land values(4,'x',700,'blue','very fertile',200,'own',12);
+insert into land values(5,'z',800,'red','fertile',300,'rented',15);
+insert into land values(6,'y',2500,'red','poor',250,'rented',8);
+insert into land values(7,'y',2100,'blue','fertile',450,'own',10);
+insert into land values(8,'z',1575,'brown','average',350,'rented',9);
+insert into land values(9,'z',1700,'black','very fertile',150,'own',7);
+insert into land values(10,'y',1800,'brown','poor',100,'own',5);
+
+
+
+
+insert into resources values(11,1,'pump',20,2000,40000);
+insert into resources values(12,2,'machine',24,1350,32400);
+insert into resources values(13,3,'tubewells',25,3000,75000);
+insert into resources values(14,4,'pump',15,2000,30000);
+insert into resources values(15,1,'machine',30,1400,42000);
+insert into resources values(16,2,'pump',22,2000,44000);
+insert into resources values(17,3,'tubewells',25,1600,40000);
+insert into resources values(18,4,'machine',12,1800,21600);
+insert into resources values(19,2,'tubewells',10,2400,24000);
+insert into resources values(20,1,'tubewells',18,1200,21600);
+
+
+
+
+insert into financial_status values(1,2008,60000,10000,50000,101001,10001);
+insert into financial_status values(2,2008,65000,-5000,70000,101002,10002);
+insert into financial_status values(3,2008,50000,20000,30000,101003,10003); 
+insert into financial_status values(4,2008,30000,-20000,50000,101004,10004);
+insert into financial_status values(5,2008,70000,50000,20000,101005,10005);
+
+insert into financial_status values(1,2009,70000,20000,50000,101001,10001);
+insert into financial_status values(2,2009,80000,-20000,100000,101002,10002);
+insert into financial_status values(3,2009,60000,-10000,70000,101003,10003); 
+insert into financial_status values(4,2009,50000,20000,30000,101004,10004);
+insert into financial_status values(5,2009,70000,30000,40000,101005,10005);
+
+insert into financial_status values(1,2010,40000,30000,10000,101001,10001);
+insert into financial_status values(2,2010,45000,-15000,55000,101002,10002);
+insert into financial_status values(3,2010,60000,10000,50000,101003,10003); 
+insert into financial_status values(4,2010,30000,-10000,40000,101004,10004);
+insert into financial_status values(5,2010,80000,40000,40000,101005,10005);
+
+insert into financial_status values(1,2011,60000,35000,25000,101001,10001);
+insert into financial_status values(2,2011,50000,-5000,55000,101002,10002);
+insert into financial_status values(3,2011,30000,-5000,35000,101003,10003); 
+insert into financial_status values(4,2011,70000,10000,60000,101004,10004);
+insert into financial_status values(5,2011,80000,50000,30000,101005,10005);
+
+insert into financial_status values(1,2012,100000,40000,60000,101001,10001);
+insert into financial_status values(2,2012,90000,-2000,92000,101002,10002);
+insert into financial_status values(3,2012,70000,20000,50000,101003,10003); 
+insert into financial_status values(4,2012,80000,20000,60000,101004,10004);
+insert into financial_status values(5,2012,50000,30000,20000,101005,10005);
+
+
+
+
+insert into output values(1,'autumn',2008,'wheat',1000,50);
+insert into output values(2,'autumn',2008,'wheat',4000,55);
+insert into output values(3,'autumn',2008,'maize',6000,56);
+insert into output values(4,'autumn',2009,'maize',5500,52);
+insert into output values(5,'autumn',2009,'maize',3500,65);
+insert into output values(1,'spring',2008,'rice',4500,70);
+insert into output values(2,'spring',2008,'wheat',5000,68);
+insert into output values(3,'spring',2008,'wheat',6200,72);
+insert into output values(4,'spring',2009,'rice',6500,75);
+insert into output values(5,'spring',2009,'rice',7000,80);
+insert into output values(1,'summer',2008,'maize',3600,54);
+insert into output values(2,'summer',2008,'maize',4200,82);
+insert into output values(3,'summer',2008,'wheat',7500,50);
+insert into output values(4,'summer',2009,'wheat',10000,54);
+insert into output values(5,'summer',2009,'wheat',12000,58);
