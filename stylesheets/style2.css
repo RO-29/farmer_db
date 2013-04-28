@@ -1,0 +1,62 @@
+html {
+	height: 1000%;
+	
+}
+
+body {
+	position: absolute;
+	left: 0;
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	font: italic 34px Georgia;
+	-moz-transition:    all .5s;
+	-webkit-transition: all .5s;
+	-ms-transition:     all .5s;
+	-o-transition:      all .5s;
+	transition:         all .5s;
+background-image:url('../images/back.jpg');
+
+background-repeat:no-repeat;
+background-attachment:fixed;
+background-position:center; 
+	}
+
+.one   { left: 0     }
+.two   { left: -100% }
+.three { left: -200% }
+.four{left:-300%}
+.five{left:-400%}
+
+
+section {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+#section1 {
+	
+}
+
+#section2 {
+	left: 100%;
+	
+}
+
+#section3 {
+	left: 200%;
+	
+}
+
+#section4 {
+
+	left: 300%;
+
+}
+
+#section5 {
+	left: 400%;
+
+}
+

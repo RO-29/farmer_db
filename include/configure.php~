@@ -1,0 +1,4 @@
+DEFINE('DB_name','techieb_farmer');
+DEFINE('DB_password','techbastard29');
+DEFINE('DB_host','localhost');
+DEFINE('DB_username','techiebt_rohti');

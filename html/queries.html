@@ -1,0 +1,119 @@
+<html>
+
+<head>
+<style>
+
+#page-wrap { position: relative; width: 400px; margin: 50px auto; padding: 20px; background: white; -moz-box-shadow: 0 0 20px black; -webkit-box-shadow: 0 0 20px black; box-shadow: 0 0 20px black; }
+		p { font: 15px/2 Georgia, Serif; margin: 0 0 30px 0; text-indent: 40px; }
+</style>
+		</head>
+
+<body>
+
+
+<br>
+<br>
+<br>
+<center>
+<form action="../include/query.php"method="post">
+Query::<input type="text" name="query">
+<input name="submit" type="submit">
+</form>
+</center>
+</hr>
+<h2>Sample queries For refernece!!</h2>
+<div id="page-wrap">
+<p>
+1.  display all the farmers who sold their respective crop produce at less than the average produce in the year 2008-2010 in summer season.
+	<br>select farmer.f_id,f_name,age from farmer ,output
+    <br>where farmer.f_id = output.f_id
+	<br>and season='summer' 
+	<br>and (year>=2008 and year<=2010)
+	<br>and total_produce < (select avg(total_produce) from output) ;
+<br><br>2.display the most frequently used resourses by all the farmers.(atleast>25)
+<br>	select r_id ,sum(qty) as t_qty,r_name,unit_price
+<br>	from resources
+<br>	group by r_id
+<br>	having t_qty>25;
+<br><br>3.  display all the farmers having loan and suffering loss in the period from year 2010.
+<br>	select farmer.f_id,f_name,address from farmer,loan,financial_status
+<br>	where loan.l_no=farmer.l_no
+<br>	and farmer.f_id=financial_status.f_id
+<br>	and year>=2010
+ <br>	and l_amount>0
+	<br>	and profit_loss<0
+<br>	group by f_id;
+<br><br>4.  show all farmers who just have basic education or less and having large family size (> avg(family_size).
+<br>	select * from farmer
+<br>	where family_size > (select avg(family_size))
+<br>	and education ='primary' or education ='secondary' ;
+<br><br>5.  select all farmers who have account and loans in different banks.
+<br>select f_id,f_name,address from farmer,loan,account
+<br>	where farmer.acc_no=account.acc_no and farmer.l_no=loan.l_no
+<br>	and account.br_id <> loan.br_id;
+<br><br>6.  select all the farmers with high fertile land in location z and having lowest total produce.
+<br>	select farmer.f_id,f_name,address from farmer,land,output
+<br>where farmer.f_id =land.f_id
+<br>and land.location='z'  
+<br>	and l_fertility ='fertile'
+<br>	and land.f_id=output.f_id
+<br>	and total_produce <(select avg(total_produce) from output);
+<br><br>7.  show all farmers with rented land period more than loan period.
+<br>	select distinct farmer.f_id,f_name from farmer,land,loan
+<br>	where farmer.l_no=loan.l_no 
+<br>	and land.f_id=farmer.f_id 
+<br>	and own_or_rented='rented' 
+<br>	and period_possessed>=l_period;
+<br>8.  show the average produce per hectare of rented lands and own lands
+<br>select land.f_id,location,soil_type,(avg(total_produce)/area)
+<br>	from land,output ,farmer 
+<br>	where farmer.f_id=land.f_id
+  <br>  	and land.f_id=output.f_id
+<br>	and (season='summer' or season='autumn' or season='spring')
+<br>	and (year>=2008 and year<=2010);
+   <br><br>9.  display all the farmers with rented land and suffering loss for the period 2008-2012.
+<br>	select distinct f.f_id,f.f_name,year,profit_loss from farmer f,financial_status,land
+<br>	where f.f_id=land.f_id
+<br>	and land.f_id=financial_status.f_id
+<br>	and profit_loss<0
+<br>	and (year>=2008 and year<=2012)
+	<br>	order by year;
+<br><br>10.  All farmers having more loan than the account balance
+    <br>select f_id,f_name,address ,farmer.acc_no,farmer.l_no from farmer,loan ,account 
+    <br>    	where farmer.l_no=loan.l_no 
+    <br>    	and farmer.acc_no=account.acc_no
+ <br>    	and account.balance<loan.l_amount;
+<br><br>11.  all farmers who had profit in last 4 years and order by asc in profit
+<br>   	select distinct farmer.f_id,f_name,age,sum(profit_loss) as profit from farmer,financial_status 
+<br>	where farmer.f_id=financial_status.f_id
+ <br>    	and (year>=2008 and year<=2012)
+    <br>    	and profit_loss > 0
+<br>	group by farmer.f_id
+<br>	order by sum(profit_loss);
+
+<br><br>12.  list all farmers who have less per capita income than the average per capita income
+ <br>    	select farmer.f_id,f_name,family_size,year ,(revenue/family_size) as pci
+ <br>   	from farmer,financial_status   
+   <br>   	where (revenue/family_size) < (select avg((revenue/family_size)) from financial_status,farmer )
+   <br>   	and farmer.f_id=financial_status.f_id and year>=2010;
+
+<br><br>13. list all farmers who have total profit less than the loan amount taken by them for all loan periods 
+<br>    	select farmer.f_id ,f_name 
+    <br>   	from farmer ,financial_status ,loan 
+<br>    	where farmer.l_no=loan.l_no 
+<br>	and l_period>=1
+<br>    	and financial_status.f_id=farmer.f_id
+    <br>    	and year>=2008 
+<br>    	and profit_loss<l_amount
+<br>	group by farmer.f_id; 
+
+<br><br>14.  list the n'th max family_size farmer (n is 4 here) 
+    <br>     	select f_id,f_name,family_size from farmer f1
+    <br>     	where (3) = (select count(distinct(f2.f_id))
+  <br>     	from farmer f2
+  <br>     	where f2.family_size > f1.family_size);
+</p>
+</div>s
+
+</body>
+</html>
