@@ -1,1 +1,1 @@
-Go to "taggyb.tk" for demo
+Go to "http://www.taggyb.tk" for demo
